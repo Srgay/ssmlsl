@@ -15,6 +15,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public Account login(Account account) {
         Account a= accountDao.login(account);
+        System.out.println("dfasda");
         return a;
     }
 

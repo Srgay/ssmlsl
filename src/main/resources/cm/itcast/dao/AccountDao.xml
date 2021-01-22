@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cm.itcast.dao.AccountDao">
+
+    <!--配置登录-->
+    <select id="login" parameterType="cm.itcast.domain.Account" resultType="cm.itcast.domain.Account">
+          select * from account where username = #{username,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
+    </select>
+
+<!--    配置注册-->
+    <insert id="register" parameterType="cm.itcast.domain.Account">
+        insert into account (username,password) values (#{username},#{password})
+
+    </insert>
+</mapper>
